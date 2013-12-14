@@ -1,19 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TileGridInstantiation : MonoBehaviour {
+public class TileGrid : MonoBehaviour {
 
 	public int width;
 	public int height;
 	public GameObject tile;
 
+	private GameObject[] tiles;
+
 	// Use this for initialization
 	void Start() {
+		tiles = new GameObject[width * height];
 		for (int x = 0; x < width; x++) {
 			for (int y = 0; y < height; y++) {
 				GameObject o = (GameObject)Instantiate(tile);
+				TileBehavior tb = (TileBehavior)o.GetComponent(typeof(TileBehavior));
 				o.transform.parent = this.transform;
-				o.transform.position = new Vector2(.5f * x, .5f * y);
+				o.transform.position = new Vector2(x, y);
+				tb.x = x;
+				tb.y = y;
+				tiles[y * width + x] = o;
 			}
 		}
 	}
@@ -21,5 +28,9 @@ public class TileGridInstantiation : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	public GameObject getTileAt(int x, int y) {
+		return tiles[x + y * width];
 	}
 }
