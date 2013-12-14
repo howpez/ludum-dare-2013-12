@@ -3,6 +3,9 @@ using System.Collections;
 
 public class TileBehavior : MonoBehaviour {
 
+	public int x;
+	public int y;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -21,6 +24,10 @@ public class TileBehavior : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
-		
+		GameObject grid = GameObject.Find ("grid");
+		TileGrid tg = grid.GetComponent<TileGrid> ();
+		GameObject tileOnUp = tg.getTileAt (x, y + 1);
+		TileBehavior tb = tileOnUp.GetComponent<TileBehavior>();
+		print (string.Format ("x: {0}, y: {1}", tb.x, tb.y));
 	}
 }
