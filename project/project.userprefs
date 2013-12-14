@@ -1,9 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CameraMovement.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TileBehavior.cs">
     <Files>
+      <File FileName="Assets\Scripts\TileBehavior.cs" Line="18" Column="50" />
       <File FileName="Assets\Scripts\TileGridInstantiation.cs" Line="16" Column="1" />
-      <File FileName="Assets\Scripts\CameraMovement.cs" Line="10" Column="2" />
+      <File FileName="Assets\Scripts\CameraMovement.cs" Line="19" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -12,7 +12,8 @@ public class TileGridInstantiation : MonoBehaviour {
 		for (int x = 0; x < width; x++) {
 			for (int y = 0; y < height; y++) {
 				GameObject o = (GameObject)Instantiate(tile);
-				o.transform.position = new Vector2(x, y);
+				o.transform.parent = this.transform;
+				o.transform.position = new Vector2(.5f * x, .5f * y);
 			}
 		}
 	}
