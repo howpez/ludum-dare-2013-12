@@ -1,0 +1,16 @@
+The Nucleus! Can be clicked once for ultimate weapon
+Dead! Can't be built on or grown into or passed through
+Booster! +1 to surrounding tiles
+Lookout! gives you n x n vision
+Eater! Eats enemies up to/including its power, then spawns a cell or gets more powerful or...?
+Trap! Destroys enemy on hit and converts to dead cell
+Grower! Grows in a specific direction/pattern, eg a clockwise spiral, leaving obstacle(dead?) cells in its wake.
+Direction! Affects direction of adjacent cells
+Clone! Clones an adjacent cell.
+Ghost! Can't be destroyed, enemies pass through it
+Stasis! Holds monster for x turns/time
+Deflector! Changes the direction of an enemy, or shifts an enemy while maintaining same direction
+Wall! Takes x damage/hits before being destroyed.
+Attacker! Goes off in a direction (and/or pattern) and kills enemies
+Swapper! Swaps with an adjacent cell, essenitally moving it to a new spot.
+

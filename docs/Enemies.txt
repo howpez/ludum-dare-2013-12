@@ -1,0 +1,12 @@
+Straight line!
+Snake!
+Spiral...er!
+Hopper!
+Multiple tile! Double wide, might be tricky re: order of operations
+Diagonal!
+Bomb! Does splash damage when hits
+Disabler! Disables a cell for x turns/time
+Moving Colony! Spawner that moves?
+Cancer! Hits, then spreads, leaving dead cells in wake.
+Randos! Appear in one random spot on map, destroying cell that's there.
+Seeker! Goes after a specific cell/type of cell/nucleus
