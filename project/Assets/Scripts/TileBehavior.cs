@@ -15,6 +15,12 @@ public class TileBehavior : MonoBehaviour {
 
 	void OnMouseOver() {
 		GameObject o = GameObject.Find ("selector");
-		o.transform.position = this.transform.position;
+		if (o != null) {
+			o.transform.position = this.transform.position;
+		}
+	}
+
+	void OnMouseDown() {
+		
 	}
 }
