@@ -1,16 +1,31 @@
 Nucleus! Can be clicked once for ultimate weapon
-Attacker! Goes off in a direction (and/or pattern) and kills enemies
-Booster! +1 to surrounding tiles
-Clone! Clones an adjacent cell.
-Dead! Can't be built on or grown into or passed through
-*Direction! Affects direction of adjacent cells
-Eater! Eats enemies up to/including its power, then spawns a cell or gets more powerful or...?
-*Ghost! Can't be destroyed, enemies pass through it
-Grower! Grows in a specific direction/pattern, eg a clockwise spiral, leaving obstacle(dead?) cells in its wake.
-Lookout! gives you n x n vision
-Shifter! Changes the direction of an enemy, or shifts an enemy while maintaining same direction
-Stasis! Holds monster for x turns/time
-Swapper! Swaps with an adjacent cell, essenitally moving it to a new spot.
-Trap! Destroys enemy on hit and converts to dead cell
-*Wall! Takes x damage/hits before being destroyed.
+Adjacent
 
+Attacker! Goes off in a direction (and/or pattern) and kills enemies
+
+Booster! +1 to surrounding tiles
+
+Clone! Clones an adjacent cell.
+
+Dead! Can't be built on or grown into or passed through
+
+*Direction! Affects direction of adjacent cells
+
+Eater! Eats enemies up to/including its power, then spawns a cell or gets more powerful or...?
+
+*Ghost! Can't be destroyed, enemies pass through it
+
+Grower! Grows in a specific direction/pattern, eg a clockwise spiral, leaving obstacle(dead?) cells 
+in its wake.
+
+Lookout! gives you n x n vision
+
+Shifter! Changes the direction of an enemy, or shifts an enemy while maintaining same direction
+
+Stasis! Holds monster for x turns/time
+
+Swapper! Swaps with an adjacent cell, essenitally moving it to a new spot.
+
+Trap! Destroys enemy on hit and converts to dead cell
+
+*Wall! Takes x damage/hits before being destroyed.
