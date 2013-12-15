@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class TileGrid : MonoBehaviour {
 
@@ -32,5 +33,17 @@ public class TileGrid : MonoBehaviour {
 
 	public TileBehavior GetTileAt(int x, int y) {
 		return tiles[x + y * width];
+	}
+
+	// checks for an empty neightbor tile
+	public TileBehavior FindEmptyAdjacent(int x, int y) {
+		for (int col = Math.Max(0, x - 1); col < Math.Min(width, x + 2); col++) {
+			for (int row = Math.Max(0, y - 1); row < Math.Min(height, y + 2); row++) {
+				if (tiles[row * width + col].Cell == null) {
+					return tiles[row * width + col];
+				}
+			}
+		}
+		return null;
 	}
 }

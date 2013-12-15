@@ -5,10 +5,11 @@ using Sophie;
 public class CellBehavior : MonoBehaviour {
 
 	public CellTypeData typeData;
+	protected ColonyBehavior colony;
 
 	// Use this for initialization
-	void Start () {
-
+	protected void Start () {
+		colony = GameObject.Find ("colony").GetComponent<ColonyBehavior> ();
 	}
 	
 	// Update is called once per frame
@@ -21,5 +22,9 @@ public class CellBehavior : MonoBehaviour {
 		if (r != null && typeData != null) {
 			r.color = typeData.Color;
 		}
+	}
+
+	public virtual void EndTurn() {
+		// default cell does nothing...
 	}
 }

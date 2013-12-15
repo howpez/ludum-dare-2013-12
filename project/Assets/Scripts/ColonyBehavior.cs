@@ -14,7 +14,16 @@ public class ColonyBehavior : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (Input.GetKeyDown ("space")) {
+			EndTurn();
+		}
+	}
+
+	public void EndTurn() {
+		for (int i = 0; i < cells.Count; i++) {
+			CellBehavior cell = cells[i];
+			cell.EndTurn();
+		}
 	}
 
 	public void AddCell(CellBehavior cell) {

@@ -16,7 +16,6 @@ public class TileBehavior : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
 	}
 	
 	// Update is called once per frame
@@ -32,6 +31,7 @@ public class TileBehavior : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
+		// already a cell in place, so cannot place a new one
 		if (cell != null)
 			return;
 		CellChoiceBehavior[] behaviors = FindObjectsOfType<CellChoiceBehavior> ();
@@ -41,6 +41,7 @@ public class TileBehavior : MonoBehaviour {
 				cell = colony.MakeCell (b.CellType, x, y);
 			}
 		}
+		// new cell was created
 		if (cell != null) {
 			foreach (CellChoiceBehavior b in behaviors) {
 				b.SelectRandomCellType();
