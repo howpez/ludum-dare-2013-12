@@ -48,6 +48,9 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\CellBehavior.cs" />
+     <Compile Include="Assets\Scripts\CellChoiceBehavior.cs" />
+     <Compile Include="Assets\Scripts\CellTypeData.cs" />
+     <Compile Include="Assets\Scripts\ColonyBehavior.cs" />
      <Compile Include="Assets\Scripts\NucleusBehavior.cs" />
      <Compile Include="Assets\Scripts\TileBehavior.cs" />
      <Compile Include="Assets\Scripts\TileGrid.cs" />

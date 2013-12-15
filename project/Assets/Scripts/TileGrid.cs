@@ -7,11 +7,11 @@ public class TileGrid : MonoBehaviour {
 	public int height;
 	public GameObject tile;
 
-	private GameObject[] tiles;
+	private TileBehavior[] tiles;
 
 	// Use this for initialization
 	void Start() {
-		tiles = new GameObject[width * height];
+		tiles = new TileBehavior[width * height];
 		for (int x = 0; x < width; x++) {
 			for (int y = 0; y < height; y++) {
 				GameObject o = (GameObject)Instantiate(tile);
@@ -20,7 +20,7 @@ public class TileGrid : MonoBehaviour {
 				o.transform.position = new Vector2(x, y);
 				tb.x = x;
 				tb.y = y;
-				tiles[y * width + x] = o;
+				tiles[y * width + x] = tb;
 			}
 		}
 	}
@@ -30,7 +30,7 @@ public class TileGrid : MonoBehaviour {
 	
 	}
 
-	public GameObject getTileAt(int x, int y) {
+	public TileBehavior GetTileAt(int x, int y) {
 		return tiles[x + y * width];
 	}
 }

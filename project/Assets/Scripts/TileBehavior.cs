@@ -1,10 +1,18 @@
 ﻿using UnityEngine;
+
 using System.Collections;
+using Sophie;
 
 public class TileBehavior : MonoBehaviour {
 
 	public int x;
 	public int y;
+	private CellBehavior cell;
+
+	public CellBehavior Cell {
+		get { return cell; }
+		set { cell = value; }
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -24,10 +32,19 @@ public class TileBehavior : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
-		GameObject grid = GameObject.Find ("grid");
-		TileGrid tg = grid.GetComponent<TileGrid> ();
-		GameObject tileOnUp = tg.getTileAt (x, y + 1);
-		TileBehavior tb = tileOnUp.GetComponent<TileBehavior>();
-		print (string.Format ("x: {0}, y: {1}", tb.x, tb.y));
+		if (cell != null)
+			return;
+		CellChoiceBehavior[] behaviors = FindObjectsOfType<CellChoiceBehavior> ();
+		foreach (CellChoiceBehavior b in behaviors) {
+			if (b.IsSelected) {
+				ColonyBehavior colony = GameObject.Find ("colony").GetComponent<ColonyBehavior> ();
+				cell = colony.MakeCell (b.CellType, x, y);
+			}
+		}
+		if (cell != null) {
+			foreach (CellChoiceBehavior b in behaviors) {
+				b.SelectRandomCellType();
+			}
+		}
 	}
 }

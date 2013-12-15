@@ -1,20 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Sophie;
 
 public class CellBehavior : MonoBehaviour {
 
-	public Color color;
+	public CellTypeData typeData;
 
 	// Use this for initialization
 	void Start () {
-		SpriteRenderer r = this.GetComponent<SpriteRenderer> ();
-		if (r != null) {
-			r.color = color;
-		}
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	public void Colorize() {
+		SpriteRenderer r = this.GetComponent<SpriteRenderer> ();
+		if (r != null && typeData != null) {
+			r.color = typeData.Color;
+		}
 	}
 }

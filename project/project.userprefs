@@ -1,11 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CellBehavior.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Model\BuildManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\TileBehavior.cs" Line="9" Column="1" />
-      <File FileName="Assets\Scripts\CellBehavior.cs" Line="12" Column="4" />
-      <File FileName="Assets\Scripts\NucleusBehavior.cs" Line="8" Column="3" />
-      <File FileName="Assets\Scripts\TileGrid.cs" Line="10" Column="24" />
+      <File FileName="Assets\Scripts\TileBehavior.cs" Line="35" Column="4" />
+      <File FileName="Assets\Scripts\TileGrid.cs" Line="26" Column="3" />
+      <File FileName="Assets\Scripts\ColonyBehavior.cs" Line="12" Column="18" />
+      <File FileName="Assets\Scripts\CellChoiceBehavior.cs" Line="16" Column="25" />
+      <File FileName="Assets\Scripts\Model\BuildManager.cs" Line="9" Column="63" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

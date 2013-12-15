@@ -3,13 +3,13 @@ using System.Collections;
 
 public class CameraMovement : MonoBehaviour {
 
+	const float speed = 10.0f;
+
 	// Use this for initialization
 	void Start () {
 	
 	}
-
-	const float speed = 10.0f;
-
+	
 	// Update is called once per frame
 	void Update () {
 		var movement = Vector3.zero;
