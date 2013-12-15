@@ -48,9 +48,12 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\CellBehavior.cs" />
+     <Compile Include="Assets\Scripts\EnemyStraightLineScript.cs" />
      <Compile Include="Assets\Scripts\NucleusBehavior.cs" />
+     <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\TileBehavior.cs" />
      <Compile Include="Assets\Scripts\TileGrid.cs" />
+     <Compile Include="Assets\Scripts\TileGridInstantiation.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
