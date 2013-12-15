@@ -29,7 +29,8 @@ public class NucleusBehavior : CellBehavior {
 
 	// nucleus grows tissue cell around it like a grower
 	public override void EndTurn() {
-		TileBehavior tile = tileGrid.FindRandomEmptyAdjacent ((int)this.transform.position.x, (int)transform.position.y);
+		TileQuery q = new TileQuery ();
+		TileBehavior tile = q.FindRandomEmptyAdjacent ((int)this.transform.position.x, (int)transform.position.y);
 		if (tile != null) {
 			tile.Cell = colony.MakeCell(CellTypeData.Empty, tile.x, tile.y);
 		}

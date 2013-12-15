@@ -22,24 +22,17 @@ namespace Sophie
 		public static readonly CellTypeData Wall = new CellTypeData (new Color (0.74f, 0.18f, 0));
 
 		private Color color;
-		private bool canBuild;
 
 		#region Properties
 		public Color Color
 		{
 			get { return color; }
 		}
-		//hi
-		public bool CanBuild
-		{
-			get { return canBuild; }
-		}
 		#endregion 
 
 		public CellTypeData (Color color)
 		{
 			this.color = color;
-
 		}
 
 		public static List<CellTypeData> GetBuildable()
