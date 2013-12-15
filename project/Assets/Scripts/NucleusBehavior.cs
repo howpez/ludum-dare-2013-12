@@ -17,8 +17,8 @@ public class NucleusBehavior : CellBehavior {
 		Colorize ();
 		colony.AddCell (this);
 		tileGrid = GameObject.Find ("grid").GetComponent<TileGrid> ();
-		tileGrid.GetTileAt (0, 0).Cell = this;
-		this.transform.position = new Vector2 (0, 0);
+		tileGrid.GetTileAt (tileGrid.width / 2, tileGrid.height / 2).Cell = this;
+		this.transform.position = new Vector2 (tileGrid.width / 2, tileGrid.height / 2);
 	}
 	
 	// Update is called once per frame
