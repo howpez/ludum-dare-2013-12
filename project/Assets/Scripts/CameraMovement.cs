@@ -8,7 +8,7 @@ public class CameraMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		TileGrid grid = GameObject.Find ("grid").GetComponent<TileGrid> ();
-		transform.position = new Vector2 (grid.width / 2, grid.height / 2);
+		transform.position = new Vector3 (grid.width / 2, grid.height / 2, transform.position.z);
 	}
 	
 	// Update is called once per frame

@@ -1,14 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System;
+
+using Sophie;
 
 public class TileGrid : MonoBehaviour {
 
 	public int width;
 	public int height;
 	public GameObject tile;
+	public GameObject highlight;
 
 	private TileBehavior[] tiles;
+	private Stack<GameObject> highlights = new Stack<GameObject>();
+
+	public TileBehavior[] Tiles {
+		get { return tiles; }
+	}
 
 	// Use this for initialization
 	void Start() {
@@ -31,10 +40,6 @@ public class TileGrid : MonoBehaviour {
 	
 	}
 
-	public TileBehavior GetTileAt(int x, int y) {
-		return tiles[x + y * width];
-	}
-
 	// checks for an empty neightbor tile
 	public TileBehavior FindEmptyAdjacent(int x, int y) {
 		for (int col = Math.Max(0, x - 1); col < Math.Min(width, x + 2); col++) {
@@ -45,5 +50,23 @@ public class TileGrid : MonoBehaviour {
 			}
 		}
 		return null;
+	}
+		
+	public void HighlightBuildableCells() {
+		ClearHighlights ();
+		TileQuery q = new TileQuery ();
+		List<TileBehavior> res = q.FindBuildableTiles ();
+		foreach (TileBehavior tb in res) {
+			GameObject clone = (GameObject)Instantiate(highlight);
+			clone.transform.parent = tb.transform;
+			clone.transform.position = tb.transform.position;
+			highlights.Push(clone);
+		}
+	}
+
+	public void ClearHighlights() {
+		while (highlights.Count > 0) {
+			Destroy(highlights.Pop());
+		}
 	}
 }

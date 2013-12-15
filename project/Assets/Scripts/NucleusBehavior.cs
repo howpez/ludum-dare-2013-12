@@ -15,9 +15,10 @@ public class NucleusBehavior : CellBehavior {
 	new void Start () {
 		base.Start ();
 		Colorize ();
-		colony.AddCell (this);
+		colony.Nucleus = this;
 		tileGrid = GameObject.Find ("grid").GetComponent<TileGrid> ();
-		tileGrid.GetTileAt (tileGrid.width / 2, tileGrid.height / 2).Cell = this;
+		TileQuery q = new TileQuery ();
+		q.FindTileAt (tileGrid.width / 2, tileGrid.height / 2).Cell = this;
 		this.transform.position = new Vector2 (tileGrid.width / 2, tileGrid.height / 2);
 	}
 	

@@ -31,9 +31,10 @@ public class TileBehavior : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
-		// already a cell in place, so cannot place a new one
-		if (cell != null)
+		TileQuery q = new TileQuery ();
+		if (!q.CanBuildAt (x, y)) {
 			return;
+		}
 		CellChoiceBehavior[] behaviors = FindObjectsOfType<CellChoiceBehavior> ();
 		foreach (CellChoiceBehavior b in behaviors) {
 			if (b.IsSelected) {
@@ -41,6 +42,7 @@ public class TileBehavior : MonoBehaviour {
 				cell = colony.MakeCell (b.CellType, x, y);
 			}
 		}
+		GameObject.Find ("grid").GetComponent<TileGrid> ().ClearHighlights ();
 		// new cell was created
 		if (cell != null) {
 			foreach (CellChoiceBehavior b in behaviors) {

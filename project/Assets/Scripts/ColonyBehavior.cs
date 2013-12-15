@@ -6,6 +6,17 @@ public class ColonyBehavior : MonoBehaviour {
 
 	public GameObject cellPrefab;
 	private List<CellBehavior> cells;
+	private NucleusBehavior nucleus;
+
+	public NucleusBehavior Nucleus {
+		get {
+			return nucleus; 
+		}
+		set {
+			nucleus = value; 
+			AddCell(nucleus);
+		}
+	}
 
 	// Use this for initialization
 	void Start () {

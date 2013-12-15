@@ -52,7 +52,7 @@ public class CellChoiceBehavior : MonoBehaviour {
 			b.Deselect();
 		}
 		this.Select ();
+		// highlight potential build locations
+		GameObject.Find ("grid").GetComponent<TileGrid> ().HighlightBuildableCells ();
 	}
-
-
 }

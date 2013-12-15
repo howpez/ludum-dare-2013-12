@@ -579,7 +579,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_SortingLayerID: 1708081037
   m_Sprite: {fileID: 21300000, guid: 2fc199d9d09804e4195b1bb1d58cbe70, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
@@ -635,6 +635,7 @@ MonoBehaviour:
   width: 50
   height: 50
   tile: {fileID: 100000, guid: f25adf2c07be465469223c0ea3e3fdb3, type: 2}
+  highlight: {fileID: 100000, guid: f29b6f663c6780b4b8c59dfc496d077d, type: 2}
 --- !u!1001 &1215223123
 Prefab:
   m_ObjectHideFlags: 0
@@ -684,7 +685,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 21200000, guid: f29b6f663c6780b4b8c59dfc496d077d, type: 2}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f29b6f663c6780b4b8c59dfc496d077d, type: 2}
