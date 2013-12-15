@@ -40,7 +40,7 @@ public class TileGrid : MonoBehaviour {
 	
 	}
 
-	// checks for an empty neightbor tile
+	// checks for an empty neighbor tile
 	public TileBehavior FindEmptyAdjacent(int x, int y) {
 		for (int col = Math.Max(0, x - 1); col < Math.Min(width, x + 2); col++) {
 			for (int row = Math.Max(0, y - 1); row < Math.Min(height, y + 2); row++) {
@@ -51,6 +51,29 @@ public class TileGrid : MonoBehaviour {
 		}
 		return null;
 	}
+
+	// returns all empty neighbor tiles
+	public TileBehavior FindRandomEmptyAdjacent(int x, int y) {
+		//make a list of empties
+		List<TileBehavior> candidates = new List<TileBehavior>();
+		for (int col = Math.Max(0, x - 1); col < Math.Min(width, x + 2); col++) {
+			for (int row = Math.Max(0, y - 1); row < Math.Min(height, y + 2); row++) {
+				if (tiles[row * width + col].Cell == null) {
+					candidates.Add(tiles[row * width + col]);
+				}
+			}		
+		}
+		if (candidates.Count > 0){
+			//return a random one from the list
+			System.Random rnd = new System.Random();
+			int r = rnd.Next(0,candidates.Count);
+			return candidates[r];
+		}
+		return null;
+
+	}
+
+
 		
 	public void HighlightBuildableCells() {
 		ClearHighlights ();
