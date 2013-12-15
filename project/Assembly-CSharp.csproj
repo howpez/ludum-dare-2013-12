@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\CellChoiceBehavior.cs" />
      <Compile Include="Assets\Scripts\CellTypeData.cs" />
      <Compile Include="Assets\Scripts\ColonyBehavior.cs" />
+     <Compile Include="Assets\Scripts\EnemyHopperScript.cs" />
      <Compile Include="Assets\Scripts\EnemyStraightLineScript.cs" />
      <Compile Include="Assets\Scripts\NucleusBehavior.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
