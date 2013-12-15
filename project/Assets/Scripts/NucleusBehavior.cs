@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 using Sophie;
@@ -28,9 +28,9 @@ public class NucleusBehavior : CellBehavior {
 
 	// nucleus grows tissue cell around it like a grower
 	public override void EndTurn() {
-		TileBehavior tile = tileGrid.FindEmptyAdjacent ((int)this.transform.position.x, (int)transform.position.y);
+		TileBehavior tile = tileGrid.FindRandomEmptyAdjacent ((int)this.transform.position.x, (int)transform.position.y);
 		if (tile != null) {
-			tile.Cell = colony.MakeCell(CellTypeData.Tissue, tile.x, tile.y);
+			tile.Cell = colony.MakeCell(CellTypeData.Empty, tile.x, tile.y);
 		}
 	}
 }
