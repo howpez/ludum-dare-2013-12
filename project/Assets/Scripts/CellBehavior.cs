@@ -23,8 +23,4 @@ public class CellBehavior : MonoBehaviour {
 			r.color = typeData.Color;
 		}
 	}
-
-	public virtual void EndTurn() {
-		// default cell does nothing...
-	}
 }

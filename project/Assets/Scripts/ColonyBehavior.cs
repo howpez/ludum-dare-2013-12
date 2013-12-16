@@ -31,10 +31,7 @@ public class ColonyBehavior : MonoBehaviour {
 	}
 
 	public void EndTurn() {
-		for (int i = 0; i < cells.Count; i++) {
-			CellBehavior cell = cells[i];
-			cell.EndTurn();
-		}
+		Events.Trigger ("EndTurn");
 	}
 
 	public void AddCell(CellBehavior cell) {

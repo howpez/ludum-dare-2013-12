@@ -42,13 +42,9 @@ public class TileBehavior : MonoBehaviour {
 				cell = colony.MakeCell (b.CellType, x, y);
 			}
 		}
-		Events.Trigger ("PlaceCell", cell);
-
 		// new cell was created
 		if (cell != null) {
-			foreach (CellChoiceBehavior b in behaviors) {
-				b.SelectRandomCellType();
-			}
+			Events.Trigger ("PlaceCell", cell);
 		}
 	}
 }

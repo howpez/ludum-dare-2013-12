@@ -8,6 +8,7 @@ public class CellChoiceBehavior : MonoBehaviour {
 	private CellTypeData cellType;
 	private bool selected;
 	private static System.Random randy = new System.Random ();
+	private EventDelegate placeCellDelegate;
 
 	public bool IsSelected {
 		get { return selected; }
@@ -19,11 +20,21 @@ public class CellChoiceBehavior : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		SelectRandomCellType ();
+		SelectRandomCellType (null);
+		placeCellDelegate = new EventDelegate (SelectRandomCellType);
+		Events.Listen ("PlaceCell", placeCellDelegate);
+	}
+
+	void OnDisable()
+	{
+		if (!gameObject.activeSelf)
+		{
+			Events.Cancel("PlaceCell", placeCellDelegate);
+		}
 	}
 
 	// selects a random, buildable cell type
-	public void SelectRandomCellType() {
+	public void SelectRandomCellType(object args) {
 		List<CellTypeData> cellTypes = CellTypeData.GetBuildable ();
 		cellType = cellTypes [randy.Next(0, cellTypes.Count)];
 		SpriteRenderer render = this.GetComponent<SpriteRenderer> ();

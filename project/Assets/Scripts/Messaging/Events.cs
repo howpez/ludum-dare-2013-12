@@ -26,6 +26,11 @@ namespace Sophie
 			}
 		}
 
+		public static void Trigger(string eventName)
+		{
+			Trigger (eventName, new object[] { });
+		}
+
 		public static void Trigger(string eventName, params object[] args)
 		{
 			if (!handlers.ContainsKey (eventName))

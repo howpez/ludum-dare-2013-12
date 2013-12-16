@@ -15,9 +15,15 @@ public class TileGrid : MonoBehaviour {
 	private TileBehavior[] tiles;
 	private TileType[] map;
 	private Stack<GameObject> highlights = new Stack<GameObject>();
+	private EventDelegate placeCellDelegate;
 
 	public TileBehavior[] Tiles {
 		get { return tiles; }
+	}
+
+	TileGrid()
+	{
+		placeCellDelegate = new EventDelegate (OnPlaceCell);
 	}
 
 	// Use this for initialization
@@ -37,9 +43,17 @@ public class TileGrid : MonoBehaviour {
 				tiles[y * width + x] = tb;
 			}
 		}
-		Events.Listen ("PlaceCell", new EventDelegate(OnPlaceCell));
+		Events.Listen ("PlaceCell", placeCellDelegate);
 	}
-		             
+	
+	void OnDisable()
+	{
+		if (!gameObject.activeSelf)
+		{
+			Events.Cancel("PlaceCell", placeCellDelegate);
+		}
+	}
+
 	public void OnPlaceCell(object args) {
 		ClearHighlights ();
 	}
