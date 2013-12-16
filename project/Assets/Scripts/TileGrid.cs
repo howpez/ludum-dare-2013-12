@@ -13,6 +13,7 @@ public class TileGrid : MonoBehaviour {
 	public GameObject highlight;
 
 	private TileBehavior[] tiles;
+	private TileType[] map;
 	private Stack<GameObject> highlights = new Stack<GameObject>();
 
 	public TileBehavior[] Tiles {
@@ -21,6 +22,9 @@ public class TileGrid : MonoBehaviour {
 
 	// Use this for initialization
 	void Start() {
+		TileGridGenerator gen = new TileGridGenerator ();
+		map = gen.GenerateEmpty (width, height);
+				
 		tiles = new TileBehavior[width * height];
 		for (int x = 0; x < width; x++) {
 			for (int y = 0; y < height; y++) {
@@ -33,6 +37,11 @@ public class TileGrid : MonoBehaviour {
 				tiles[y * width + x] = tb;
 			}
 		}
+		Events.Listen ("PlaceCell", new EventDelegate(OnPlaceCell));
+	}
+		             
+	public void OnPlaceCell(object args) {
+		ClearHighlights ();
 	}
 	
 	// Update is called once per frame

@@ -42,7 +42,8 @@ public class TileBehavior : MonoBehaviour {
 				cell = colony.MakeCell (b.CellType, x, y);
 			}
 		}
-		GameObject.Find ("grid").GetComponent<TileGrid> ().ClearHighlights ();
+		Events.Trigger ("PlaceCell", cell);
+
 		// new cell was created
 		if (cell != null) {
 			foreach (CellChoiceBehavior b in behaviors) {

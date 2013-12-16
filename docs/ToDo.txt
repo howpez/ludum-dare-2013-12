@@ -8,5 +8,4 @@ Enemy spawning
 Enemy movement
 Enemy trails
 Collision resolution
-Checks for connectedness
 Checks for collision of mobs
